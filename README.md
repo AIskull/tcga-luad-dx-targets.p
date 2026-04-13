@@ -197,13 +197,13 @@ Genes were ranked using a composite **TargetScore** incorporating:
 
 ## Reproducibility
 
-### Public-safe visibility
+### Repository data boundaries
 - Raw GEO files are intentionally **not committed** to the repository.
 - `metadata/sample_map_all.tsv`, scripts, and published outputs are tracked for reproducibility.
 - CPTAC validation is dependency-driven (`cptac` package), and is not committed as raw data.
 
 ### Data access and attribution
-This repository is a public-facing analysis and reproducibility snapshot. Users should obtain source data from the official providers and comply with upstream access, attribution, and reuse terms.
+This repository documents an independent analysis and reproducibility snapshot. Users should obtain source data from the official providers and comply with upstream access, attribution, and reuse terms.
 
 - **GEO / GSE62944:** training inputs in this project are derived from public GEO accession `GSE62944`. GEO states that NCBI places no restrictions on use or distribution of GEO data, but submitters may assert patent, copyright, or other intellectual property rights in submitted data.
 - **TCGA / GDC:** where open-access TCGA or GDC resources are involved, reuse requires proper accreditation. Controlled-access resources require separate authorization and are not redistributed in this repository.
