@@ -1,18 +1,24 @@
-# TCGA LUAD RNA-seq Analysis: Diagnostic Biomarkers & Therapeutic Target Discovery
+# LUAD RNA-seq Differential Expression and External Validation
 
 ## Overview
 
-Lung adenocarcinoma (LUAD) is the most common subtype of lung cancer and a leading cause of cancer-related mortality worldwide. Despite advances in targeted therapies and immunotherapy, early detection and molecular stratification remain critical challenges.
+This repository documents an independent computational biology project focused on lung adenocarcinoma (LUAD) tumor-vs-normal RNA-seq analysis using public datasets.
 
-RNA sequencing (RNA-seq) enables systematic characterization of transcriptional differences between tumor and normal tissue. These differences can be leveraged to:
-
-- Identify **diagnostic biomarkers**
-- Build **classification models** distinguishing tumor from normal samples
-- Prioritize **therapeutic targets** based on expression shifts and biological relevance
-
-This repository implements an **end-to-end, fully reproducible RNA-seq analysis pipeline** using TCGA LUAD data, with both **diagnostic modeling** and **drug-discovery–oriented analyses**, followed by **external validation** on an independent cohort.
+The workflow covers data acquisition, metadata construction, count processing, differential expression analysis, classifier development, and external validation. The goal is to show a reproducible end-to-end analysis in R and Python using public LUAD transcriptomic resources.
 
 > Research use only. This repository is intended for research communication and reproducibility, not for clinical diagnosis, treatment selection, or patient-care decisions.
+
+---
+
+## Skills Demonstrated
+
+- RNA-seq data processing and cohort filtering
+- Metadata curation for tumor-vs-normal analysis
+- Differential expression analysis with DESeq2
+- Logistic regression classifier development and evaluation
+- Cross-cohort validation with an independent LUAD dataset
+- Reproducible workflow development in R and Python
+- Figure and summary-table generation for scientific reporting
 
 ---
 
@@ -154,7 +160,7 @@ To assess cross-cohort generalization, the TCGA-trained diagnostic model was eva
 - Balanced accuracy: 73.9%
 
 ### Interpretation
-Despite differences in cohort composition and sequencing pipelines, the diagnostic signal generalizes across datasets. Threshold-dependent trade-offs suggest distinct use cases, ranging from **screening-oriented detection** to **confirmatory diagnostics**.
+Despite differences in cohort composition and sequencing pipelines, the classifier retains measurable cross-cohort signal. The reduced external performance relative to the TCGA training cohort highlights the difficulty of transferring transcriptomic models across datasets with different technical and biological characteristics.
 
 ---
 
@@ -177,6 +183,15 @@ Genes were ranked using a composite **TargetScore** incorporating:
 - LAG3
 
 > These candidates represent **hypothesis-generating targets**, not validated therapeutic recommendations.
+
+---
+
+## Limitations
+
+- The external validation analysis is transcriptomics-only and does not incorporate orthogonal molecular or clinical features.
+- Performance differs between the TCGA training cohort and the CPTAC external cohort, so results should be interpreted as research findings rather than deployment-ready models.
+- Bulk RNA-seq does not resolve cell-type-specific effects.
+- Functional validation of highlighted genes was not performed in this repository.
 
 ---
 
@@ -284,21 +299,13 @@ roc_curve_external_cptac_luad.png
 
 boxplot_*.png
 
-### Public posting checklist
+## Public Posting Checklist
 - Ensure no personal secrets, API tokens, or credentials appear in environment files.
 - Ensure no untracked large raw/processed inputs are committed.
 - Confirm your branch list includes only intended work branches before sharing.
 - Push only intended branches/tags to GitHub.
 
-Limitations
-
-Bulk RNA-seq cannot resolve cell-type–specific effects
-
-No survival or outcome modeling included
-
-Functional validation not performed
-
-Next Steps
+## Next Steps
 
 Molecular subtyping within LUAD
 
