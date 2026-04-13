@@ -188,7 +188,7 @@ Genes were ranked using a composite **TargetScore** incorporating:
 Use the local manifest and downloader:
 
 ```bash
-cd /path/to/tcga-luad-dx-targets-showcase
+cd /path/to/tcga-luad-dx-targets.p
 bash scripts/00_download_gse62944.sh
 ```
 
@@ -213,7 +213,7 @@ If hashes are missing in the manifest, the run will continue with a warning.
 ### Quick run (recommended)
 ```bash
 conda activate luad_tcga
-cd /path/to/tcga-luad-dx-targets-showcase
+cd /path/to/tcga-luad-dx-targets.p
 export TCGA_LUAD_ROOT="$PWD"
 bash scripts/99_run_all.sh
 ```
@@ -302,4 +302,3 @@ Author
 
 Kevin Arredondo
 B.S. Molecular Cell Biology
-Bioinformatics & Translational Cancer Research
