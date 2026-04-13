@@ -12,6 +12,8 @@ RNA sequencing (RNA-seq) enables systematic characterization of transcriptional 
 
 This repository implements an **end-to-end, fully reproducible RNA-seq analysis pipeline** using TCGA LUAD data, with both **diagnostic modeling** and **drug-discovery–oriented analyses**, followed by **external validation** on an independent cohort.
 
+> Research use only. This repository is intended for research communication and reproducibility, not for clinical diagnosis, treatment selection, or patient-care decisions.
+
 ---
 
 ## Data Sources
@@ -35,6 +37,7 @@ This repository implements an **end-to-end, fully reproducible RNA-seq analysis 
   - Tumor: 110
   - Normal-adjacent tissue (NAT): 211
 - **Platform:** RNA-seq (WashU FPKM)
+- **Access path in this repo:** transcriptomics loaded through the Python `cptac` package for external validation only; the workflow does not redistribute CPTAC raw files or clinical tables
 
 > Raw data files are not committed to GitHub. See **Reproducibility** for instructions.
 
@@ -183,6 +186,15 @@ Genes were ranked using a composite **TargetScore** incorporating:
 - Raw GEO files are intentionally **not committed** to the repository.
 - `metadata/sample_map_all.tsv`, scripts, and published outputs are tracked for reproducibility.
 - CPTAC validation is dependency-driven (`cptac` package), and is not committed as raw data.
+
+### Data access and attribution
+This repository is a public-facing analysis and reproducibility snapshot. Users should obtain source data from the official providers and comply with upstream access, attribution, and reuse terms.
+
+- **GEO / GSE62944:** training inputs in this project are derived from public GEO accession `GSE62944`. GEO states that NCBI places no restrictions on use or distribution of GEO data, but submitters may assert patent, copyright, or other intellectual property rights in submitted data.
+- **TCGA / GDC:** where open-access TCGA or GDC resources are involved, reuse requires proper accreditation. Controlled-access resources require separate authorization and are not redistributed in this repository.
+- **CPTAC LUAD:** the external validation workflow uses transcriptomics accessed through the Python `cptac` package. This repository does not redistribute CPTAC raw files, CPTAC clinical tables, controlled-access data, or access credentials.
+
+When reusing this repository, please cite or acknowledge the original data resources and relevant upstream publications, including GEO `GSE62944`, TCGA / GDC, and CPTAC.
 
 ### Data setup (required before running)
 Use the local manifest and downloader:

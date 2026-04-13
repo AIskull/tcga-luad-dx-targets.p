@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite it using the metadata below."
+title: "TCGA LUAD RNA-seq Analysis: Diagnostic Biomarkers & Therapeutic Target Discovery"
+type: software
+authors:
+  - family-names: "Arredondo"
+    given-names: "Kevin"
+repository-code: "https://github.com/AIskull/tcga-luad-dx-targets.p"
+url: "https://github.com/AIskull/tcga-luad-dx-targets.p"
+abstract: "Public research showcase and reproducibility snapshot for TCGA LUAD diagnostic biomarker modeling and therapeutic target prioritization with external CPTAC validation."
+date-released: 2026-04-13
