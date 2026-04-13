@@ -24,6 +24,10 @@ This repository implements an **end-to-end, fully reproducible RNA-seq analysis 
   - 497 LUAD tumor samples
   - 58 matched normal lung samples
 - **Genes analyzed:** ~22,500 after filtering
+- **Required local raw files (public):**
+  - `data/raw/GSE62944_RAW/GSM1536837_06_01_15_TCGA_24.tumor_Rsubread_FeatureCounts.txt.gz`
+  - `data/raw/GSE62944_RAW/GSM1697009_06_01_15_TCGA_24.normal_Rsubread_FeatureCounts.txt.gz`
+- **Mapping file used for LUAD filtering:** `metadata/sample_map_all.tsv` (tracked in this repo)
 
 ### CPTAC (External Validation Cohort)
 - **Dataset:** CPTAC LUAD
@@ -176,13 +180,40 @@ Genes were ranked using a composite **TargetScore** incorporating:
 ## Reproducibility
 
 ### Public-safe visibility
-- Raw and processed data are intentionally not included in this repository.  
-- Local secrets, credentials, and credentials-injected environment files are not tracked.
+- Raw GEO files are intentionally **not committed** to the repository.
+- `metadata/sample_map_all.tsv`, scripts, and published outputs are tracked for reproducibility.
+- CPTAC validation is dependency-driven (`cptac` package), and is not committed as raw data.
+
+### Data setup (required before running)
+Use the local manifest and downloader:
+
+```bash
+cd /path/to/tcga-luad-dx-targets-showcase
+bash scripts/00_download_gse62944.sh
+```
+
+The downloader prints exact source links and tells you whether each file is present.
+It does not auto-download by default. To attempt automatic retrieval, use:
+
+```bash
+bash scripts/00_download_gse62944.sh --download
+```
+
+### Optional checksum verification
+If `data_sources.tsv` includes SHA256 values, this pipeline verifies them when present.
+
+```bash
+# Generate a standard hash-check file (when hash values are present)
+awk -F '\t' 'BEGIN {OFS=" "} /^[^#]/ && NF >= 6 && $6 != "" {print $6, $4}' data_sources.tsv > data_sources.sha256
+sha256sum -c data_sources.sha256
+```
+
+If hashes are missing in the manifest, the run will continue with a warning.
 
 ### Quick run (recommended)
 ```bash
 conda activate luad_tcga
-cd /path/to/tcga-luad-dx-targets
+cd /path/to/tcga-luad-dx-targets-showcase
 export TCGA_LUAD_ROOT="$PWD"
 bash scripts/99_run_all.sh
 ```

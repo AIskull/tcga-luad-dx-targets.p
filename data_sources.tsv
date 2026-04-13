@@ -1,0 +1,3 @@
+dataset	accession	filename	local_path	download_url	sha256
+GSE62944	GSE62944	GSM1536837_06_01_15_TCGA_24.tumor_Rsubread_FeatureCounts.txt.gz	data/raw/GSE62944_RAW/GSM1536837_06_01_15_TCGA_24.tumor_Rsubread_FeatureCounts.txt.gz	https://ftp.ncbi.nlm.nih.gov/geo/series/GSE62nnn/GSE62944/suppl/GSM1536837_06_01_15_TCGA_24.tumor_Rsubread_FeatureCounts.txt.gz	
+GSE62944	GSE62944	GSM1697009_06_01_15_TCGA_24.normal_Rsubread_FeatureCounts.txt.gz	data/raw/GSE62944_RAW/GSM1697009_06_01_15_TCGA_24.normal_Rsubread_FeatureCounts.txt.gz	https://ftp.ncbi.nlm.nih.gov/geo/series/GSE62nnn/GSE62944/suppl/GSM1697009_06_01_15_TCGA_24.normal_Rsubread_FeatureCounts.txt.gz	
