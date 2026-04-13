@@ -1,0 +1,7 @@
+metric	value
+n_all_padj<0.05	15682
+n_all_up_padj<0.05	10108
+n_all_down_padj<0.05	5574
+n_sig_strict_padj<0.05_absLFC>=1	6287
+n_sig_up_strict_padj<0.05_LFC>=1	4217
+n_sig_down_strict_padj<0.05_LFC<=-1	2070

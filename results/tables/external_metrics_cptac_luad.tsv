@@ -1,0 +1,17 @@
+metric	value
+external_dataset	CPTAC_LUAD
+roc_auc	0.7393149504523913
+n_test_samples	321.0
+n_panel_genes_used	19.0
+default_threshold	0.5
+default_sensitivity	0.2636363636363636
+default_specificity	0.8625592417061612
+default_precision	0.5
+default_accuracy	0.6573208722741433
+default_balanced_accuracy	0.5630978026712624
+optimal_threshold_youdenJ	0.010781500050594533
+optimal_sensitivity	1.0
+optimal_specificity	0.47867298578199047
+optimal_precision	0.5
+optimal_accuracy	0.6573208722741433
+optimal_balanced_accuracy	0.7393364928909952

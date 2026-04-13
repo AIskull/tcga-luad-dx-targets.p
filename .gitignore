@@ -1,0 +1,96 @@
+# =====================================================
+# RAW & LARGE BIOINFORMATICS DATA (DO NOT TRACK)
+# =====================================================
+
+# Local data should stay untracked unless explicitly exempted
+data/
+
+# GEO / TCGA raw text dumps
+GSE*.txt
+GSM*.txt
+*_series_matrix*.txt
+
+# Compressed archives
+*.zip
+*.tar.gz
+*.tgz
+
+
+# =====================================================
+# INTERMEDIATE / TEMPORARY FILES
+# =====================================================
+
+data/intermediate/
+tmp/
+cache/
+
+
+# =====================================================
+# LOG FILES
+# =====================================================
+
+*.log
+
+
+# =====================================================
+# R LANGUAGE
+# =====================================================
+
+.Rhistory
+.RData
+.Rproj.user/
+
+
+# =====================================================
+# PYTHON
+# =====================================================
+
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+
+# =====================================================
+# CONDA / VIRTUAL ENVIRONMENTS
+# =====================================================
+
+.env
+.venv
+env/
+venv/
+
+
+# =====================================================
+# JUPYTER
+# =====================================================
+
+.ipynb_checkpoints/
+
+
+# =====================================================
+# OS / EDITOR FILES
+# =====================================================
+
+.DS_Store
+Thumbs.db
+.vscode/
+
+
+# =====================================================
+# RESULTS (INTENTIONALLY TRACKED)
+# =====================================================
+
+# NOTE:
+# results/tables/ and results/figures/ ARE intentionally tracked
+# to document reproducible scientific outputs, figures, and models.
+results/bio_runs/
+results/tables/de_sensitivity_tss_deseq2/
+results/tables/de_sensitivity_tss_edger/
+results/tables/de_sensitivity_tss_limma/
+# Processed / derived data (local only)
+data/processed/
+metadata/luad_coldata.tsv
+
+# Raw data should never be tracked
+data/raw/

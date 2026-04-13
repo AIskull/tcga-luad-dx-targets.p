@@ -1,0 +1,7 @@
+metric	value
+roc_auc_cv_mean	0.9998316498316498
+roc_auc_cv_std	0.00033670033670034626
+n_samples	555.0
+n_features_pool	200.0
+n_features_final	20.0
+threshold_for_cm	0.5
