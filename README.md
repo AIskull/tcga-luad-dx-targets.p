@@ -299,12 +299,6 @@ roc_curve_external_cptac_luad.png
 
 boxplot_*.png
 
-## Public Posting Checklist
-- Ensure no personal secrets, API tokens, or credentials appear in environment files.
-- Ensure no untracked large raw/processed inputs are committed.
-- Confirm your branch list includes only intended work branches before sharing.
-- Push only intended branches/tags to GitHub.
-
 ## Next Steps
 
 Molecular subtyping within LUAD
